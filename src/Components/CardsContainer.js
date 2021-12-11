@@ -7,12 +7,13 @@ const CardsContainer = () => {
   const [farms, setFarms] = useState();
 
   const getFarms = async () => {
-    const { data } = await axios.get("http://localhost:5000/api");
+    const { data } = await axios.get("http://localhost:5000/farm");
     setFarms(data);
   };
   useEffect(() => {
     getFarms();
   }, []);
+
   return (
     <div className="container">
       <h1>🌽 Node Farm 🥦</h1>

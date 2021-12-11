@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./Farmdetails.css";
 const FarmDetail = () => {
   const location = useLocation();
@@ -56,7 +56,7 @@ const FarmDetail = () => {
         </p>
       </div>
 
-      <Link to="#" class="product__link">
+      <Link to="/" class="product__link">
         <span class="emoji-left">🛒</span>
         <span>Add to shopping card ({farm.price}€)</span>
       </Link>
