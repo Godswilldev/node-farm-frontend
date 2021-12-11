@@ -1,13 +1,15 @@
-import React from 'react'
-import "./App.css";
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import CardsContainer from "./Components/CardsContainer";
+import FarmDetail from "./Components/FarmDetail";
 
 const App = () => {
   return (
-    <div>
-      <h1>App.js</h1>
-    </div>
-  )
-}
+    <Routes>
+      <Route path="/" element={<CardsContainer />} />
+      <Route path="/farm/:id" element={<FarmDetail />} />
+    </Routes>
+  );
+};
 
-export default App
+export default App;
