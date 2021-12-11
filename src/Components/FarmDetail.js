@@ -1,15 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import "./Farmdetails.css";
 const FarmDetail = () => {
-  const { id } = useParams();
+  const location = useLocation();
+  const id = new URLSearchParams(location.search).get("id");
+
   const [farm, setFarm] = useState([]);
 
   useEffect(() => {
     const getFarm = async () => {
-      const { data } = await axios.get(`http://localhost:5000/farm/${id}`);
+      const { data } = await axios.get(
+        `http://localhost:5000/farmDetail?id=${id}`
+      );
       setFarm(data);
     };
     getFarm();

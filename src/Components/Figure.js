@@ -26,7 +26,7 @@ const Figure = ({ farm }) => {
         </div>
       </div>
 
-      <Link className="card__link" to={`/farm/${farm.id}`}>
+      <Link className="card__link" to={`/farmDetail?id=${farm.id}`}>
         <span>
           Detail <i className="emoji-right">👉</i>
         </span>
